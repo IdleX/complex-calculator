@@ -1,9 +1,14 @@
+import utils.*;
 import java.awt.Font;
 import javax.swing.*;
 
 public class App {
   private static JFrame frame;
   private static JLabel resultLabel;
+  private static JTextField xTextFieldRe;
+  private static JTextField xTextFieldIm;
+  private static JTextField yTextFieldRe;
+  private static JTextField yTextFieldIm;
   private static JComboBox<String> selectComboBox;
   private static final String[] AVAILABLE_ACTIONS = {
     "Действие: сложение",
@@ -17,7 +22,7 @@ public class App {
   }
 
   private static void showError(String text) {
-    Object[] options = { "Понял" };
+    final Object[] options = { "Понял" };
 
     JOptionPane.showOptionDialog(
       frame,
@@ -32,19 +37,43 @@ public class App {
   }
 
   private static void calculate() {
+    Complex a;
+    Complex b;
+    
+    try {
+      a = new Complex(Double.parseDouble(xTextFieldRe.getText()), Double.parseDouble(xTextFieldIm.getText()));
+      b = new Complex(Double.parseDouble(yTextFieldRe.getText()), Double.parseDouble(yTextFieldIm.getText()));
+    } catch (NumberFormatException e) {
+      showError("Введены некорректные данные!");
+      return;
+    }
+
     String selectedAction = selectComboBox.getSelectedItem().toString();
     switch (selectedAction) {
-      case "Действие: сложение": 
+      case "Действие: сложение":
+        a.plus(b);
         break;
       case "Действие: вычитание": 
+        a.minus(b);
         break;
       case "Действие: умножение": 
+        a.multiply(b);
         break;
-      case "Действие: деление": 
+      case "Действие: деление":
+        try {
+          a.divide(b);
+        } catch (ArithmeticException e) {
+          showError(e.getMessage());
+          return;
+        }
+
         break;
       default:
         showError("Действие не найдено!");
+        return;
     }
+
+    resultLabel.setText("РЕЗУЛЬТАТ: " + a.toString());
   }
 
   private static void display() {
@@ -69,15 +98,15 @@ public class App {
     yJLabel.setFont(labelFont);
     frame.add(yJLabel);
 
-    JTextField xTextFieldRe1 = new JTextField(1);
-    xTextFieldRe1.setBounds(60, 60, 100, 24);
-    xTextFieldRe1.setFont(labelFont);
-    frame.add(xTextFieldRe1);
+    xTextFieldRe = new JTextField(1);
+    xTextFieldRe.setBounds(60, 60, 100, 24);
+    xTextFieldRe.setFont(labelFont);
+    frame.add(xTextFieldRe);
 
-    JTextField yTextFieldIm1 = new JTextField(1);
-    yTextFieldIm1.setBounds(60, 90, 100, 24);
-    yTextFieldIm1.setFont(labelFont);
-    frame.add(yTextFieldIm1);
+    yTextFieldRe = new JTextField(1);
+    yTextFieldRe.setBounds(60, 90, 100, 24);
+    yTextFieldRe.setFont(labelFont);
+    frame.add(yTextFieldRe);
 
     JLabel plusJLabel1 = new JLabel("+");
     plusJLabel1.setBounds(170, 60, 20, 20);
@@ -89,15 +118,15 @@ public class App {
     plusJLabel2.setFont(labelFont);
     frame.add(plusJLabel2);
 
-    JTextField xTextFieldRe2 = new JTextField(1);
-    xTextFieldRe2.setBounds(192, 60, 100, 24);
-    xTextFieldRe2.setFont(labelFont);
-    frame.add(xTextFieldRe2);
+    xTextFieldIm = new JTextField(1);
+    xTextFieldIm.setBounds(192, 60, 100, 24);
+    xTextFieldIm.setFont(labelFont);
+    frame.add(xTextFieldIm);
 
-    JTextField yTextFieldIm2 = new JTextField(1);
-    yTextFieldIm2.setBounds(192, 90, 100, 24);
-    yTextFieldIm2.setFont(labelFont);
-    frame.add(yTextFieldIm2);
+    yTextFieldIm = new JTextField(1);
+    yTextFieldIm.setBounds(192, 90, 100, 24);
+    yTextFieldIm.setFont(labelFont);
+    frame.add(yTextFieldIm);
 
     JLabel iJLabel1 = new JLabel("i");
     iJLabel1.setBounds(294, 60, 20, 20);
@@ -116,7 +145,7 @@ public class App {
     frame.add(calculateButton);
 
     resultLabel = new JLabel("РЕЗУЛЬТАТ:");
-    resultLabel.setBounds(20, 130, 400, 80);
+    resultLabel.setBounds(20, 130, 550, 80);
     resultLabel.setFont(defaultFont);
     frame.add(resultLabel);
 
