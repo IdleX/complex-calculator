@@ -151,6 +151,7 @@ public class App {
 
     frame.setSize(600, 230);
     frame.setLayout(null);
+    frame.setResizable(false);
     frame.setLocationRelativeTo(null);
     frame.setVisible(true);
   }

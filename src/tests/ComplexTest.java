@@ -1,10 +1,11 @@
 package tests;
 
 import utils.*;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class ComplexTest {
-    @org.junit.Test
+    @Test
     public void plus() {
         Complex a = new Complex(50, 11);
         Complex b = new Complex(25, 13);
@@ -13,7 +14,7 @@ public class ComplexTest {
         assertTrue(a.getImag() == 24);
     }
 
-    @org.junit.Test
+    @Test
     public void minus() {
         Complex a = new Complex(60, 44);
         Complex b = new Complex(32, 11);
@@ -22,7 +23,7 @@ public class ComplexTest {
         assertTrue(a.getImag() == 33);
     }
 
-    @org.junit.Test
+    @Test
     public void multiply() {
         Complex a = new Complex(10, 5);
         Complex b = new Complex(12, 10);
@@ -31,7 +32,7 @@ public class ComplexTest {
         assertTrue(a.getImag() == 160);
     }
 
-    @org.junit.Test
+    @Test
     public void divide() {
         Complex a = new Complex(12, 55);
         Complex b = new Complex(2, 4);
