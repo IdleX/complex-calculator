@@ -41,8 +41,15 @@ public class App {
     Complex b;
     
     try {
-      a = new Complex(Double.parseDouble(xTextFieldRe.getText()), Double.parseDouble(xTextFieldIm.getText()));
-      b = new Complex(Double.parseDouble(yTextFieldRe.getText()), Double.parseDouble(yTextFieldIm.getText()));
+      a = new Complex(
+        Double.parseDouble(xTextFieldRe.getText()), 
+        Double.parseDouble(xTextFieldIm.getText())
+      );
+      
+      b = new Complex(
+        Double.parseDouble(yTextFieldRe.getText()), 
+        Double.parseDouble(yTextFieldIm.getText())
+      );
     } catch (NumberFormatException e) {
       showError("Введены некорректные данные!");
       return;
