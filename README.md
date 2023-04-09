@@ -10,11 +10,9 @@
 [Руководство по форматированию кода](https://github.com/IdleX/complex-calculator/blob/master/style-guide.md)
 
 ### 3. Скриншоты работы программы
-![image](https://user-images.githubusercontent.com/56923910/230763104-ac6a3005-eac7-48ed-90fc-c7e1eed3c74d.png)
-![image](https://user-images.githubusercontent.com/56923910/230763120-b56177b1-9073-4ea5-adaa-c2d3d8ccd922.png)
-![image](https://user-images.githubusercontent.com/56923910/230763174-c53bb5c4-3b3c-4ac5-a8c3-088b8f37f519.png)
-![image](https://user-images.githubusercontent.com/56923910/230763211-2ade1ba8-7800-426c-8d62-09584af9c2cf.png)
-![image](https://user-images.githubusercontent.com/56923910/230763236-d918eb55-fa3e-431b-9d93-021031d73303.png)
-![image](https://user-images.githubusercontent.com/56923910/230763253-5bf9fba0-9ddd-4e47-8399-799eacadbb4e.png)
-
-
+![image](https://user-images.githubusercontent.com/56923910/230799512-d80769fe-0a96-4315-af7a-3ee6bcb5da23.png)
+![image](https://user-images.githubusercontent.com/56923910/230799530-98eaac77-bf8c-4189-883f-f77d0a40420a.png)
+![image](https://user-images.githubusercontent.com/56923910/230799556-d9450457-fe32-485e-8588-a0eb0c19a6cf.png)
+![image](https://user-images.githubusercontent.com/56923910/230799574-4bc093dc-19c3-4fc4-bf47-f44099d7ace7.png)
+![image](https://user-images.githubusercontent.com/56923910/230799630-f1d2e295-4225-4614-b440-38e2b084bf04.png)
+![image](https://user-images.githubusercontent.com/56923910/230799646-5d746382-73b1-46b3-91b9-cd60b9d200b9.png)
