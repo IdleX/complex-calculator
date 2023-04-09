@@ -1,5 +1,8 @@
 package utils;
 
+import java.text.*;
+import java.util.*;
+
 public class Complex {
   private double re; // the real part
   private double im; // the imaginary part
@@ -95,6 +98,9 @@ public class Complex {
    * @return this Complex object in string
   */
   public String toString() {
-		return re + " + " + im + "i";
+    DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.getDefault());
+    symbols.setDecimalSeparator('.');
+    DecimalFormat dec = new DecimalFormat("#.#########", symbols);
+		return dec.format(re) + " + " + dec.format(im) + "i";
 	}
 }
