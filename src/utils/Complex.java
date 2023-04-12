@@ -75,6 +75,18 @@ public class Complex {
   }
 
   /**
+   * Average operation
+   * 
+   * @param b summand
+   * @return this Complex object whose value is ((this + b) / 2)
+  */
+  public Complex average(Complex b) {
+    re = (re + b.re) / 2;
+    im = (im + b.im) / 2;
+    return this;
+  }
+
+  /**
    * Returns the real component of the Complex object
    *
    * @return the double value associated with the real component

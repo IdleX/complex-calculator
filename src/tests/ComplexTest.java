@@ -41,4 +41,13 @@ public class ComplexTest {
         assertTrue(a.getReal() == 12.2);
         assertTrue(a.getImag() == 3.1);
     }
+
+    @Test
+    public void average() {
+        Complex a = new Complex(4, 8);
+        Complex b = new Complex(2, 4);
+        a.average(b);
+        assertTrue(a.getReal() == 3);
+        assertTrue(a.getImag() == 6);
+    }
 }

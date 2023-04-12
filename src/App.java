@@ -11,10 +11,11 @@ public class App {
   private static JTextField yTextFieldIm;
   private static JComboBox<String> selectComboBox;
   private static final String[] AVAILABLE_ACTIONS = {
-    "Действие: сложение",
-    "Действие: вычитание",
-    "Действие: умножение",
-    "Действие: деление"
+      "Действие: сложение",
+      "Действие: вычитание",
+      "Действие: умножение",
+      "Действие: деление",
+      "Действие: среднее арифметическое"
   };
 
   public static void main(String[] args) {
@@ -25,31 +26,28 @@ public class App {
     final Object[] options = { "Понял" };
 
     JOptionPane.showOptionDialog(
-      frame,
-      text,
-      "Ошибка",
-      JOptionPane.ERROR_MESSAGE,
-      JOptionPane.DEFAULT_OPTION,
-      null,
-      options,
-      options[0]
-    );
+        frame,
+        text,
+        "Ошибка",
+        JOptionPane.ERROR_MESSAGE,
+        JOptionPane.DEFAULT_OPTION,
+        null,
+        options,
+        options[0]);
   }
 
   private static void calculate() {
     Complex a;
     Complex b;
-    
+
     try {
       a = new Complex(
-        Double.parseDouble(xTextFieldRe.getText()), 
-        Double.parseDouble(xTextFieldIm.getText())
-      );
-      
+          Double.parseDouble(xTextFieldRe.getText()),
+          Double.parseDouble(xTextFieldIm.getText()));
+
       b = new Complex(
-        Double.parseDouble(yTextFieldRe.getText()), 
-        Double.parseDouble(yTextFieldIm.getText())
-      );
+          Double.parseDouble(yTextFieldRe.getText()),
+          Double.parseDouble(yTextFieldIm.getText()));
     } catch (NumberFormatException e) {
       showError("Введены некорректные данные!");
       return;
@@ -60,10 +58,10 @@ public class App {
       case "Действие: сложение":
         a.plus(b);
         break;
-      case "Действие: вычитание": 
+      case "Действие: вычитание":
         a.minus(b);
         break;
-      case "Действие: умножение": 
+      case "Действие: умножение":
         a.multiply(b);
         break;
       case "Действие: деление":
@@ -74,6 +72,9 @@ public class App {
           return;
         }
 
+        break;
+      case "Действие: среднее арифметическое":
+        a.average(b);
         break;
       default:
         showError("Действие не найдено!");
