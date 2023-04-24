@@ -15,16 +15,16 @@
  */
 
 import utils.*;
-import java.awt.Font;
 import javax.swing.*;
+import java.awt.Font;
 
 public class App {
   private static JFrame frame;
   private static JLabel resultLabel;
-  private static JTextField xTextFieldRe;
-  private static JTextField xTextFieldIm;
-  private static JTextField yTextFieldRe;
-  private static JTextField yTextFieldIm;
+  private static DoubleTextField xTextFieldRe;
+  private static DoubleTextField xTextFieldIm;
+  private static DoubleTextField yTextFieldRe;
+  private static DoubleTextField yTextFieldIm;
   private static JComboBox<String> selectComboBox;
   private static final String[] AVAILABLE_ACTIONS = {
       "Действие: сложение",
@@ -122,12 +122,12 @@ public class App {
     yJLabel.setFont(labelFont);
     frame.add(yJLabel);
 
-    xTextFieldRe = new JTextField(1);
+    xTextFieldRe = new DoubleTextField();
     xTextFieldRe.setBounds(60, 60, 100, 24);
     xTextFieldRe.setFont(labelFont);
     frame.add(xTextFieldRe);
 
-    yTextFieldRe = new JTextField(1);
+    yTextFieldRe = new DoubleTextField();
     yTextFieldRe.setBounds(60, 90, 100, 24);
     yTextFieldRe.setFont(labelFont);
     frame.add(yTextFieldRe);
@@ -142,12 +142,12 @@ public class App {
     plusJLabel2.setFont(labelFont);
     frame.add(plusJLabel2);
 
-    xTextFieldIm = new JTextField(1);
+    xTextFieldIm = new DoubleTextField();
     xTextFieldIm.setBounds(192, 60, 100, 24);
     xTextFieldIm.setFont(labelFont);
     frame.add(xTextFieldIm);
 
-    yTextFieldIm = new JTextField(1);
+    yTextFieldIm = new DoubleTextField();
     yTextFieldIm.setBounds(192, 90, 100, 24);
     yTextFieldIm.setFont(labelFont);
     frame.add(yTextFieldIm);
